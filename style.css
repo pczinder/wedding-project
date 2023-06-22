@@ -1,49 +1,16 @@
-/* ==== HELPER COLORS FOR LAYOUT ==== 
-
-.cover {
-	background-color: rgba(255, 248, 53, .3);
-}
-
-.locations {
-	background-color: rgba(140, 96, 255, .3);
-}
-
-.program {
-	background-color: rgba(255, 0, 0, .3);
-}
-
-.gifts {
-	background-color: rgba(85, 208, 97, 0.3);
-}
-
-.faq {
-	background-color: rgba(199, 100, 29, 0.3);
-}
-
-.contact {
-	background-color: rgba(96, 61, 179, 0.3);
-}
-
-footer {
-	background-color: rgba(211, 57, 65, 0.3);
-}
-
-*/
-
-
 /* =============================
 
     GENERAL STYLES
 
 =============================*/
 
-  /*border-box model applied*/
+/* border-box model applied */
   * {
     box-sizing: border-box;
   }
 
-  /* Single-direction margin declaration to establish vertical rhythm. */
-  h1,h2,h3, ul,p,img {
+/* Single-direction margin declaration to establish vertical rhythm. */
+  h1,h2,h3,ul,p,img {
       margin-bottom: 1.5rem;
   }
 
@@ -57,7 +24,7 @@ footer {
     color: #444349;
   }
 
-  /*definig box model properties*/
+/* sections' properties */
   .locations, .program, .gifts, .faq, .contact {
     width: 95%;
     margin: 1.5rem auto;
@@ -65,7 +32,7 @@ footer {
     text-align: center;
   }
 
-  /*typography*/
+/* typography */
 
   h1, h2 {
     font-family: 'Great Vibes', cursive;
@@ -85,7 +52,15 @@ footer {
     vertical-align: baseline;
   }
 
-  /* links */
+  p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+
+/* links */
   
    a {
     text-decoration: none;
@@ -97,9 +72,10 @@ footer {
     transition: color .15s ease-in-out;
   }
 
-/*
-           Header
-                             */
+  
+/* ===========================
+           Header-cover
+============================ */
 
 .cover {
 background: url('assets/wedding-landing-cover.jpg') no-repeat 70% center/cover;
@@ -125,8 +101,7 @@ padding: 0 .625rem;
 .goodnews {
   font-size: 1.25rem;
   letter-spacing: .15rem;
-  text-transform: uppercase;
-}
+  }
 
 h1 {
   font-size: 3.15rem;
@@ -140,7 +115,7 @@ h1 {
   vertical-align: middle;
 }
 
-.goodnews::after {       /*goodnews utáni vonal*/
+.goodnews::after {       /* line after .goodnews */
   display: block;
   content: "";
   background-color: #fff;
@@ -149,7 +124,7 @@ h1 {
   margin: .5rem auto;
 }
 
-.date::before, /*dátum körüli vonalak*/
+.date::before, /* lines around .date */
 .date::after {
   display: inline-block;
   content: "";
@@ -160,9 +135,31 @@ h1 {
   margin: 0 .5rem;
 }
 
-/*
-      Locations
-                      */
+@media (min-width: 768px){  /* media queries for the header */
+  
+  .cover {
+    background: url('assets/wedding-landing-cover.jpg') no-repeat center/cover;
+  }
+  
+  h1 {
+    font-size: 7rem;
+  }
+  
+  .goodnews {
+    text-transform: uppercase;
+  }
+  
+  .block {
+    padding: 1.25rem;
+    border-radius: 4px;
+    width: 50%;
+  }
+
+}
+
+/* ===========================
+           Locations
+============================ */
 
 .locations h3 {
   display: block;
@@ -174,11 +171,15 @@ h1 {
   font-weight: bold;
 }
 
-                      img {
+.threefacts div {
+  font-family: 'Muli', sans-serif;
+}
+
+img {
   width: 7.5rem;
 }  
 
-.threefacts::after {       /*képek utáni vonal*/
+.threefacts::after {       /* lines after images */
     content: "";
     display: block;
     height: 0.1875rem;
@@ -187,9 +188,30 @@ h1 {
     background-color: #444349;
 }
 
-/*
-      program
-                     */
+@media (min-width: 768px){
+  
+  .locations h2 {
+    margin-bottom: 0;
+  }
+  
+  .threefacts {
+    display: inline-block;
+    width: 30%;
+    padding: 1.5rem;
+    margin: 0.5rem;
+  }
+
+  .threefacts::after {       /* no line after images */
+    content: "";
+    display: none;
+  }
+
+}
+
+/* ===========================
+           Program
+============================ */
+
 .program {
 width: 100%;
 text-align: left;
@@ -212,23 +234,26 @@ font-style: italic;
 letter-spacing: .025rem;
 }
 
-/*
-.program-wrapper {
-  width: 50%;
-  margin: 0 auto;
-}
-*/
+@media (min-width: 768px) {
 
-/*
-       gifts
-                    */
+  .program-wrapper {
+    width: 30vw;
+    margin: 0 auto;
+  }
+
+}
+
+/* ===========================
+           Gifts
+============================ */
+
 .gifts p:last-child {
   margin-bottom: 0;
 }
 
-/*
-         faq
-                   */
+/* ===========================
+           Faq
+============================ */
 
 .faq {
 width: 100%;
@@ -256,7 +281,7 @@ font-family: 'Muli', sans-serif;
   margin-bottom: 1.5rem;
 }
 
-.qa::after {       /*kérdéscsoportok utáni vonal*/
+.qa::after {       /* line after question groups */
   content: "";
   display: block;
   height: 0.1875rem;
@@ -265,9 +290,31 @@ font-family: 'Muli', sans-serif;
   background-color: #d2ba87;
 }
 
-/*
-        footer
-                     */
+@media (min-width: 768px){
+  
+  .qa {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    padding: 1.5rem;
+    margin: 0.5rem;
+  }
+
+  .qa::after {       /* no lines after parts */
+    content: "";
+    display: none;
+  }
+
+  .faq h2 {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+}
+
+/* ===========================
+           Footer
+============================ */
 
 footer {
   height: 10vh;
@@ -281,7 +328,19 @@ footer {
 }
 
 .footer-wrapper {
-display: table-cell;
-vertical-align: middle;
-padding: 0.5rem 1rem;
-}                                  
+  display: table-cell;
+  vertical-align: middle;
+}
+
+footer small {
+  line-height: 1.5;
+}
+      
+
+@media (min-width: 768px){
+  
+  footer {
+    min-height: 7vh;
+  }
+
+}
