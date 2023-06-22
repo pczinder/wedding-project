@@ -1,31 +1,287 @@
-/* ==== GENERAL STYLES ==== */
+/* ==== HELPER COLORS FOR LAYOUT ==== 
 
-* {
+.cover {
+	background-color: rgba(255, 248, 53, .3);
+}
+
+.locations {
+	background-color: rgba(140, 96, 255, .3);
+}
+
+.program {
+	background-color: rgba(255, 0, 0, .3);
+}
+
+.gifts {
+	background-color: rgba(85, 208, 97, 0.3);
+}
+
+.faq {
+	background-color: rgba(199, 100, 29, 0.3);
+}
+
+.contact {
+	background-color: rgba(96, 61, 179, 0.3);
+}
+
+footer {
+	background-color: rgba(211, 57, 65, 0.3);
+}
+
+*/
+
+
+/* =============================
+
+    GENERAL STYLES
+
+=============================*/
+
+  /*border-box model applied*/
+  * {
     box-sizing: border-box;
   }
 
-/* Single-direction margin declaration to establish vertical rhythm. */
- h1,h2,h3,ul,p,img {
-    margin-bottom: 1.5 rem;
-}
+  /* Single-direction margin declaration to establish vertical rhythm. */
+  h1,h2,h3, ul,p,img {
+      margin-bottom: 1.5rem;
+  }
 
+/* background */
 
+  body {
+    background: url('assets/wedding-landing-background.png') repeat center;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: #444349;
+  }
 
-.locations, .program, .gifts, .faq, .contact {
+  /*definig box model properties*/
+  .locations, .program, .gifts, .faq, .contact {
     width: 95%;
     margin: 1.5rem auto;
     padding: 0.5rem 1rem;
     text-align: center;
-}
+  }
 
-.faq {
-    background: hsla(100,0%,0%,.6);
-    color: #d2ba87;
-    width: 100%;
-    text-align: center;
-}
+  /*typography*/
 
-a {
+  h1, h2 {
+    font-family: 'Great Vibes', cursive;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p, .question, .answer {
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  /* links */
+  
+   a {
     text-decoration: none;
     color: #bd806e;
+  }
+
+  a:hover {
+    color: #eda087;
+    transition: color .15s ease-in-out;
+  }
+
+/*
+           Header
+                             */
+
+.cover {
+background: url('assets/wedding-landing-cover.jpg') no-repeat 70% center/cover;
+height: 100vh;
+width: 100%; /*100vw?*/
+text-align: center;
+display: table;
 }
+
+.wrapper {
+display: table-cell;
+vertical-align: middle;
+padding: 0 .625rem;
+}
+
+.block {
+  margin: 0 auto;
+  padding: 0.625rem;
+  color: hsla(0,0%,100%,.9);
+  background: hsla(100,0%,0%,.5);
+}
+
+.goodnews {
+  font-size: 1.25rem;
+  letter-spacing: .15rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 3.15rem;
+  color: #d2ba87;
+  margin-bottom: 0;
+}
+
+.date {
+  font-size: 1.25rem;
+  letter-spacing: .15rem;
+  vertical-align: middle;
+}
+
+.goodnews::after {       /*goodnews utáni vonal*/
+  display: block;
+  content: "";
+  background-color: #fff;
+  height: 1px;
+  width: 12.515625rem;
+  margin: .5rem auto;
+}
+
+.date::before, /*dátum körüli vonalak*/
+.date::after {
+  display: inline-block;
+  content: "";
+  background-color: #fff;
+  height: 1px;
+  width: 1.5rem;
+  vertical-align: middle;
+  margin: 0 .5rem;
+}
+
+/*
+      Locations
+                      */
+
+.locations h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+                      img {
+  width: 7.5rem;
+}  
+
+.threefacts::after {       /*képek utáni vonal*/
+    content: "";
+    display: block;
+    height: 0.1875rem;
+    width: 25vw;
+    margin: 1.5rem auto;
+    background-color: #444349;
+}
+
+/*
+      program
+                     */
+.program {
+width: 100%;
+text-align: left;
+background: hsla(100,0%,0%,.6);
+color: #d2ba87;
+font-family: 'Muli', sans-serif;
+}
+
+.program h2 {
+font-family: 'Great Vibes', cursive;
+margin-top: 1rem;
+text-align: center;
+}
+
+.program p {
+font-style: italic; 
+}
+
+.program ul {
+letter-spacing: .025rem;
+}
+
+/*
+.program-wrapper {
+  width: 50%;
+  margin: 0 auto;
+}
+*/
+
+/*
+       gifts
+                    */
+.gifts p:last-child {
+  margin-bottom: 0;
+}
+
+/*
+         faq
+                   */
+
+.faq {
+width: 100%;
+text-align: left;
+background: hsla(100,0%,0%,.6);
+color: #d2ba87;
+font-family: 'Muli', sans-serif;
+}
+
+.faq h2 {
+  margin-top: 1rem;
+}
+
+.faq p {
+  font-family: 'Muli', sans-serif;
+  text-align: left;
+}
+
+.question {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.answer {
+  margin-bottom: 1.5rem;
+}
+
+.qa::after {       /*kérdéscsoportok utáni vonal*/
+  content: "";
+  display: block;
+  height: 0.1875rem;
+  width: 50vw;
+  margin: 1.5rem auto;
+  background-color: #d2ba87;
+}
+
+/*
+        footer
+                     */
+
+footer {
+  height: 10vh;
+  width: 100%;
+  background-color: #606060;
+  color: #fff;
+  font-family: 'Muli', sans-serif;
+  display: table;
+  text-align: center;
+  font-size: .875rem;
+}
+
+.footer-wrapper {
+display: table-cell;
+vertical-align: middle;
+padding: 0.5rem 1rem;
+}                                  
